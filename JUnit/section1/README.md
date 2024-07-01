@@ -12,7 +12,7 @@
 
 ### 실습
 
-[ScoreCollection](src/main/java/com/example/section1/ScoreCollection.java) - [Test](src/test/java/com/example/section1/ScoreCollectionTest.java)
+[ScoreCollection](src/main/java/com/example/section1/ScoreCollection.java) / [Test](src/test/java/com/example/section1/ScoreCollectionTest.java)
 
 ## 2장
 
@@ -20,7 +20,7 @@
 
 ### 실습
 
-[Profile](src/main/java/com/example/section1/Profile.java) - [Test](src/test/java/com/example/section1/ProfileTest.java)
+[Profile](src/main/java/com/example/section1/Profile.java) / [Test](src/test/java/com/example/section1/ProfileTest.java)
 
 ## 3장
 

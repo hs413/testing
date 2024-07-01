@@ -1,7 +1,7 @@
 package com.example.section1.scratch;
 
-import org.assertj.core.api.Assertions;
 import org.assertj.core.data.Offset;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -127,4 +127,13 @@ public class AssertTest {
 //        assertThat(account.getBalance()).isEqualTo(100);
 //    }
 
+
+    @Test()
+    public void throwsWhenWithDrawingTooMuch() {
+        String message = Assertions.assertThrows(InsufficientFundsException.class,() -> {
+            account.withdraw(100);
+        }).getMessage();
+
+        assertThat(message).isEqualTo("balance only 0");
+    }
 }
