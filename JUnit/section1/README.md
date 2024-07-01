@@ -73,3 +73,14 @@
 - 실패하는 테스트가 있다면 바로 수정
 - 항상 모든 테스트가 통과하도록
 - 테스트는 빠르게 실행 되어야 함
+
+## 5장
+- Fast
+- Isolated
+- Repeatable
+- Self-validating
+- Timely
+
+### 실습
+
+
