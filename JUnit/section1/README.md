@@ -84,10 +84,12 @@
   - 순서나 시간에 상관 없이 실행되어야 함
 - Repeatable
   - 테스트는 반복 가능해야 함
-  - 
 - Self-validating
 - Timely
 
 ### 실습
+
+[StatCompiler](src/main/java/com/example/section1/domain/StatCompiler.java) / [Test](src/test/java/com/example/section1/domain/StatCompilerTest.java)
+
 
 
