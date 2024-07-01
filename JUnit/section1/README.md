@@ -92,4 +92,35 @@
 [StatCompiler](src/main/java/com/example/section1/domain/StatCompiler.java) / [Test](src/test/java/com/example/section1/domain/StatCompilerTest.java)
 
 
+## 6장
+- 테스트는 결과를 예측할 수 있어야 함
+
+### Boundary Conditions
+- 경계 조건
+  - 모호하고 일관성 없는 입력 값
+    - 예) 특수문자가 포함된 문자
+  - 잘못된 양식 데이터
+  - 수치적 오버플로가 발생하는 계산
+  - 빈 값
+    - 예) 0, "", null
+  - 기댓값을 많이 벗어나는 값
+    - 예) 150세의 나이
+  - 중복이 허용되지 않는 목록의 중복 값
+  - 정렬되지 않은 리스트
+  - 시간 순이 맞지 않는 값
+- CORRECT
+  - Conformance
+  - Ordering
+  - Range
+  - Reference
+  - Existence
+  - Cardinality
+  - Time
+### Inverse relationship
+
+### Cross-check
+
+### Error Conditions
+
+### Performance characteristics
 

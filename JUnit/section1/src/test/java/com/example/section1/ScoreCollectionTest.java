@@ -1,12 +1,20 @@
 package com.example.section1;
 
+import org.aspectj.lang.annotation.Before;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 
 class ScoreCollectionTest {
+    private ScoreCollection collection;
 
+    @BeforeEach
+    public void create() {
+        collection = new ScoreCollection();
+    }
     @Test
     public void test() {
         // stub
@@ -27,4 +35,23 @@ class ScoreCollectionTest {
         assertThat(actualResult).isEqualTo(6);
     }
 
+    @Test
+    public void throwsExceptionWhenAddingNull() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            collection.add(null);
+        });
+    }
+
+    @Test
+    public void answersZeroWhenNoElementsAdded() {
+        assertThat(collection.arithmeticMean()).isEqualTo(0);
+    }
+
+    @Test
+    public void dealsWithIntegerOverflow() {
+        collection.add(() -> Integer.MAX_VALUE);
+        collection.add(() -> 1);
+
+        assertThat(collection.arithmeticMean()).isEqualTo(1073741824);
+    }
 }
