@@ -1,6 +1,8 @@
 # JUnit 테스트 만들기
 
-## 단위 테스트 작성 이유
+## 1장
+
+### 단위 테스트 작성 이유
 - 코드가 어떤 일을 하는지 알기 쉬움
 - 단위 테스트가 쌓이면 회귀 테스트를 지원
 
@@ -12,4 +14,11 @@
 
 [ScoreCollection](src/main/java/com/example/section1/ScoreCollection.java) - [Test](src/test/java/com/example/section1/ScoreCollectionTest.java)
 
+## 2장
+
+- 테스트 클래스에는 static 필드 x
+
+### 실습
+
+[Profile](src/main/java/com/example/section1/Profile.java) - [Test](src/test/java/com/example/section1/ProfileTest.java)
 
