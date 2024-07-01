@@ -18,7 +18,7 @@ public class QuestionController {
     // ...
 
     private static EntityManagerFactory getEntityManagerFactory() {
-        return Persistence.createEntityManagerFactory("postgres-ds");
+        return Persistence.createEntityManagerFactory("h2");
     }
 
     public Question find(Integer id) {
