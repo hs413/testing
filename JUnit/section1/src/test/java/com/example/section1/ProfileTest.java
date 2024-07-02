@@ -31,12 +31,33 @@ class ProfileTest {
     private Profile profile;
     private BooleanQuestion question;
     private Criteria criteria;
+    private Answer answerReimbursesTuition;
+    private Answer answerDoesNotReimburseTuition;
+    private Answer answerThereIsRelocation;
+    private Answer answerThereIsNoRelocation;
+    private Question questionIsThereRelocation;
+    private Question questionReimbursesTuition;
 
     @BeforeEach
     public void create() {
         profile = new Profile("Bull Hockey. Inc.");
         question = new BooleanQuestion(1, "Got bonuses?");
         criteria = new Criteria();
+
+        questionIsThereRelocation =
+                new BooleanQuestion(1, "Relocation package?");
+
+        answerThereIsRelocation =
+                new Answer(questionIsThereRelocation, Bool.TRUE);
+        answerThereIsNoRelocation =
+                new Answer(questionIsThereRelocation, Bool.FALSE);
+
+        questionReimbursesTuition =
+                new BooleanQuestion(1, "Reimburses tuition?");
+        answerReimbursesTuition =
+                new Answer(questionReimbursesTuition, Bool.TRUE);
+        answerDoesNotReimburseTuition =
+                new Answer(questionReimbursesTuition, Bool.FALSE);
     }
 
     @Test
@@ -56,6 +77,18 @@ class ProfileTest {
                 Weight.DontCare));
 
         boolean matches = profile.matches(criteria);
+        assertTrue(matches);
+    }
+
+    @Test
+    public void matchAnswersTrueWhenAnyOfMultipleCriteriaMatch() {
+        profile.add(answerThereIsRelocation);
+        profile.add(answerDoesNotReimburseTuition);
+        criteria.add(new Criterion(answerThereIsRelocation, Weight.Important));
+        criteria.add(new Criterion(answerReimbursesTuition, Weight.Important));
+
+        boolean matches = profile.matches(criteria);
+
         assertTrue(matches);
     }
 }
