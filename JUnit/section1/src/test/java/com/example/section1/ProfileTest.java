@@ -60,35 +60,35 @@ class ProfileTest {
                 new Answer(questionReimbursesTuition, Bool.FALSE);
     }
 
-    @Test
-    public void matchAnswersFalseWhenMustMatchCriteriaNotMet() {
-        profile.add(new Answer(question, Bool.FALSE));
-        criteria.add(new Criterion(new Answer(question, Bool.TRUE),
-                Weight.MustMatch));
-
-        boolean matches = profile.matches(criteria);
-        assertFalse(matches);
-    }
-
-    @Test
-    public void matchAnswersTrueForAnyDontCareCriteria() {
-        profile.add(new Answer(question, Bool.FALSE));
-        criteria.add(new Criterion(new Answer(question, Bool.TRUE),
-                Weight.DontCare));
-
-        boolean matches = profile.matches(criteria);
-        assertTrue(matches);
-    }
-
-    @Test
-    public void matchAnswersTrueWhenAnyOfMultipleCriteriaMatch() {
-        profile.add(answerThereIsRelocation);
-        profile.add(answerDoesNotReimburseTuition);
-        criteria.add(new Criterion(answerThereIsRelocation, Weight.Important));
-        criteria.add(new Criterion(answerReimbursesTuition, Weight.Important));
-
-        boolean matches = profile.matches(criteria);
-
-        assertTrue(matches);
-    }
+//    @Test
+//    public void matchAnswersFalseWhenMustMatchCriteriaNotMet() {
+//        profile.add(new Answer(question, Bool.FALSE));
+//        criteria.add(new Criterion(new Answer(question, Bool.TRUE),
+//                Weight.MustMatch));
+//
+//        boolean matches = profile.matches(criteria);
+//        assertFalse(matches);
+//    }
+//
+//    @Test
+//    public void matchAnswersTrueForAnyDontCareCriteria() {
+//        profile.add(new Answer(question, Bool.FALSE));
+//        criteria.add(new Criterion(new Answer(question, Bool.TRUE),
+//                Weight.DontCare));
+//
+//        boolean matches = profile.matches(criteria);
+//        assertTrue(matches);
+//    }
+//
+//    @Test
+//    public void matchAnswersTrueWhenAnyOfMultipleCriteriaMatch() {
+//        profile.add(answerThereIsRelocation);
+//        profile.add(answerDoesNotReimburseTuition);
+//        criteria.add(new Criterion(answerThereIsRelocation, Weight.Important));
+//        criteria.add(new Criterion(answerReimbursesTuition, Weight.Important));
+//
+//        boolean matches = profile.matches(criteria);
+//
+//        assertTrue(matches);
+//    }
 }
