@@ -23,28 +23,12 @@ public class Profile {
     }
 
     public boolean matches(Criteria criteria) {
-        score = 0;
+        calculateScore(criteria);
 
-        boolean kill = false;
-        for (Criterion criterion: criteria) {
-            boolean match = criterion.matches(answerMatching(criterion));
-
-            if (!match && criterion.getWeight() == Weight.MustMatch) {
-                kill = true;
-            }
-
-            if (match) {
-                score += criterion.getWeight().getValue();
-            }
-        }
-
-        if (kill)
+        if (doesNotMeetAnyMustMatchCriterion(criteria))
             return false;
 
         return anyMatches(criteria);
-    }
-    public int score() {
-        return score;
     }
 
     // Criterion 클래스로 이동
@@ -62,5 +46,21 @@ public class Profile {
             anyMatches |= criterion.matches(answerMatching(criterion));
 
         return anyMatches;
+    }
+
+    private void calculateScore(Criteria criteria) {
+        score = 0;
+        for (Criterion criterion: criteria)
+            if (criterion.matches(answerMatching(criterion)))
+                score += criterion.getWeight().getValue();
+    }
+
+    private boolean doesNotMeetAnyMustMatchCriterion(Criteria criteria) {
+        for (Criterion criterion: criteria) {
+            boolean match = criterion.matches(answerMatching(criterion));
+            if (!match && criterion.getWeight()== Weight.MustMatch)
+                return true;
+        }
+        return false;
     }
 }
