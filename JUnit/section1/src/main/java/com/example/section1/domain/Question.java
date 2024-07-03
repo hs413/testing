@@ -1,6 +1,6 @@
 package com.example.section1.domain;
 
-import com.example.section1.Answer;
+import com.example.section1.basic.Answer;
 import jakarta.persistence.*;
 
 import java.io.Serializable;

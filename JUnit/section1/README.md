@@ -1,7 +1,5 @@
 # JUnit 테스트 만들기
 
-## 1장
-
 ### 단위 테스트 작성 이유
 - 코드가 어떤 일을 하는지 알기 쉬움
 - 단위 테스트가 쌓이면 회귀 테스트를 지원
@@ -10,19 +8,12 @@
 - 추가적인 테스트를 작성할 필요가 있는가
 - 결함이나 한계를 드러낼 수 있는 테스트를 작성할 수 있는가
 
-### 실습
-
 [ScoreCollection](src/main/java/com/example/section1/ScoreCollection.java) / [Test](src/test/java/com/example/section1/ScoreCollectionTest.java)
-
-## 2장
 
 - 테스트 클래스에는 static 필드 x
 
-### 실습
-
 [Profile](src/main/java/com/example/section1/Profile.java) / [Test](src/test/java/com/example/section1/ProfileTest.java)
 
-## 3장
 
 ### 햄크레스트 단언
 - assertThat 메서드가 대표적
@@ -33,11 +24,9 @@
 - 테스트 실패 시 오류 메시지에서 더 많은 정보를 얻을 수 있음
 - not null 을 자주 검사하는 것은 설계 문제 대부분의 경우 불필요함
 
-### 실습
-
 [AssertTest](src/test/java/com/example/section1/scratch/AssertTest.java)
 
-## 4장
+### 테스트 구성
 - 테스트 코드는 AAA의 3단계로 구성, 각 단계를 구분함으로서 테스트 코드의 가독성을 높인다. 
   - 준비(Arrange): 테스트 실행 전 객체의 생성이나 API 호출 등의 작업을 수행
   - 실행(Act): 테스트 하기 위한 핵심 로직을 실행
@@ -74,7 +63,7 @@
 - 항상 모든 테스트가 통과하도록
 - 테스트는 빠르게 실행 되어야 함
 
-## 5장
+### FIRST
 - Fast
   - 데이터 베이스, 네트워크 등에 의존하지 않는 테스트 작성
 - Isolated
@@ -87,50 +76,50 @@
 - Self-validating
 - Timely
 
-### 실습
-
 [StatCompiler](src/main/java/com/example/section1/domain/StatCompiler.java) / [Test](src/test/java/com/example/section1/domain/StatCompilerTest.java)
 
-
-## 6장
 - 테스트는 결과를 예측할 수 있어야 함
 
-### Boundary Conditions
-- 경계 조건
-  - 모호하고 일관성 없는 입력 값
-    - 예) 특수문자가 포함된 문자
-  - 잘못된 양식 데이터
-  - 수치적 오버플로가 발생하는 계산
-  - 빈 값
-    - 예) 0, "", null
-  - 기댓값을 많이 벗어나는 값
-    - 예) 150세의 나이
-  - 중복이 허용되지 않는 목록의 중복 값
-  - 정렬되지 않은 리스트
-  - 시간 순이 맞지 않는 값
-- CORRECT
-  - Conformance
-  - Ordering
-  - Range
-  - Reference
-  - Existence
-  - Cardinality
-  - Time
-### Inverse relationship
+- Boundary Conditions
+  - 경계 조건
+    - 모호하고 일관성 없는 입력 값
+      - 예) 특수문자가 포함된 문자
+    - 잘못된 양식 데이터
+    - 수치적 오버플로가 발생하는 계산
+    - 빈 값
+      - 예) 0, "", null
+    - 기댓값을 많이 벗어나는 값
+      - 예) 150세의 나이
+    - 중복이 허용되지 않는 목록의 중복 값
+    - 정렬되지 않은 리스트
+    - 시간 순이 맞지 않는 값
+  - CORRECT
+    - Conformance
+    - Ordering
+    - Range
+    - Reference
+    - Existence
+    - Cardinality
+    - Time
+- Inverse relationship
+- Cross-check
+- Error Conditions
+- Performance characteristics
 
-### Cross-check
-
-### Error Conditions
-
-### Performance characteristics
-
-## Mock
-
+### Mock
 - Stub
   - 테스트 용도로 하드 코딩한 값을 반환하는 구현체
 - Mock은 실제와 다르게 동작할 수 있으므로 이를 커버할 수 있는 상위 테스트 (통합 테스트)를 확인하는 것을 권장
 
 [AddressRetriever](src/main/java/com/example/section1/AddressRetriever.java) / [AddressRetrieverTest](src/test/java/com/example/section1/AddressRetrieverTest.java)
 
-## Refactoring
+### Refactoring
+
 [Process](src/test/java/com/example/section1/util/SearchTestRefactoringProcess.java) / [Result](src/test/java/com/example/section1/util/SearchTest.java)
+
+### TDD
+- 실패하는 테스트 코드 작성
+- 테스트 통과시키기
+- 코드 개선
+
+

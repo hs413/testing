@@ -1,8 +1,4 @@
-package com.example.section1;
-
-import lombok.Getter;
-
-import java.util.Map;
+package com.example.section1.basic;
 
 public class MatchSet {
     private AnswerCollection answers;

@@ -1,6 +1,5 @@
-package com.example.section1;
+package com.example.section1.basic;
 
-import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

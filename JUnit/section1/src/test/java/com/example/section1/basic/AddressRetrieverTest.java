@@ -1,4 +1,4 @@
-package com.example.section1;
+package com.example.section1.basic;
 
 import com.example.section1.util.Http;
 import org.junit.jupiter.api.BeforeEach;

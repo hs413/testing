@@ -1,4 +1,4 @@
-package com.example.section1;
+package com.example.section1.basic;
 
 public class PercentileQuestion extends Question {
     public PercentileQuestion(int id, String text, String[] answerChoices) {

@@ -1,4 +1,4 @@
-package com.example.section1;
+package com.example.section1.basic;
 
 public enum Weight {
     MustMatch(Integer.MAX_VALUE),

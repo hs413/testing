@@ -1,4 +1,4 @@
-package com.example.section1;
+package com.example.section1.basic;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package com.example.section1;
+package com.example.section1.basic;
 
 public class Address {
     public final String road;

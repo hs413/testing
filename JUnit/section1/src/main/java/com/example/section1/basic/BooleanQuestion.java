@@ -1,4 +1,4 @@
-package com.example.section1;
+package com.example.section1.basic;
 
 public class BooleanQuestion extends Question {
     public BooleanQuestion(int id, String text) {

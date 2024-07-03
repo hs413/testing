@@ -1,9 +1,6 @@
-package com.example.section1;
+package com.example.section1.basic;
 
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class ProfileTest {
 //    @Test

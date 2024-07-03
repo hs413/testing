@@ -1,4 +1,4 @@
-package com.example.section1;
+package com.example.section1.basic;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
