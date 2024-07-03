@@ -124,3 +124,9 @@
 
 ### Performance characteristics
 
+## Mock
+
+### Stub
+- 테스트 용도로 하드 코딩한 값을 반환하는 구현체
+
+[AddressRetriever](src/main/java/com/example/section1/AddressRetriever.java) / [AddressRetrieverTest](src/test/java/com/example/section1/AddressRetrieverTest.java)
