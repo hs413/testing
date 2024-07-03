@@ -126,7 +126,8 @@
 
 ## Mock
 
-### Stub
-- 테스트 용도로 하드 코딩한 값을 반환하는 구현체
+- Stub
+  - 테스트 용도로 하드 코딩한 값을 반환하는 구현체
+- Mock은 실제와 다르게 동작할 수 있으므로 이를 커버할 수 있는 상위 테스트 (통합 테스트)를 확인하는 것을 권장
 
 [AddressRetriever](src/main/java/com/example/section1/AddressRetriever.java) / [AddressRetrieverTest](src/test/java/com/example/section1/AddressRetrieverTest.java)

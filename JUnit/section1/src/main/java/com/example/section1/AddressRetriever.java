@@ -7,9 +7,9 @@ import java.io.IOException;
 public class AddressRetriever {
     private Http http;
 
-    public AddressRetriever(Http http) {
-        this.http = http;
-    }
+//    public AddressRetriever(Http http) {
+//        this.http = http;
+//    }
 
     public Address retrieve(double latitude, double longitude) throws IOException {
         return null;
