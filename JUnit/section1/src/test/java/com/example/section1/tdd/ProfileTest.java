@@ -3,6 +3,7 @@ package com.example.section1.tdd;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ProfileTest {
@@ -38,16 +39,6 @@ class ProfileTest {
     @BeforeEach
     public void createCriteria() {
         criteria = new Criteria();
-    }
-
-    @Test
-    public void matchesNothingWhenProfileEmpty() {
-        Criterion criterion = new Criterion(answerThereIsRelocation, Weight.DontCare);
-
-        boolean result = profile.matches(criterion);
-
-        assertFalse(result);
-
     }
 
     @Test
@@ -101,5 +92,22 @@ class ProfileTest {
         criteria.add(new Criterion(answerReimbursesTuition, Weight.MustMatch));
 
         assertFalse(profile.matches(criteria));
+    }
+
+    @Test
+    public void matchesWhenCriterionIsDontCare() {
+        profile.add(answerDoesNotReimburseTuition);
+        Criterion criterion = new Criterion(answerReimbursesTuition, Weight.DontCare);
+
+        assertTrue(profile.matches(criterion));
+    }
+
+    @Test
+    public void scoreIsZeroWhenThereAreNoMatches() {
+        criteria.add(new Criterion(answerThereIsRelocation, Weight.Important));
+
+        ProfileMatch match = profile.match(criteria);
+
+        assertThat(match.getScore()).isEqualTo(0);
     }
 }
