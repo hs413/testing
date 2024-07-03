@@ -2,30 +2,45 @@ package com.example.section1;
 
 import com.example.section1.util.Http;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 
 import java.io.IOException;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
+import static org.mockito.Mockito.*;
 
 public class AddressRetrieverTest {
     @Test
     public void answersAppropriateAddressForValidCoordinates()
             throws IOException {
-        Http http = (String url) -> {
-            // 조건 추가
-            if (!url.contains("lat=38.000000&lon=-104.000000"))
-                fail("url " + url + " does not contain correct parms");
+        Http http = mock(Http.class);
+        when(http.get(contains("lat=38.000000&lon=-104.000000")))
+                .thenReturn(
+                        "{\"address\":{"
+                                + "\"house_number\":\"324\","
+                                + "\"road\":\"North Tejon Street\","
+                                + "\"city\":\"Colorado Springs\","
+                                + "\"state\":\"Colorado\","
+                                + "\"postcode\":\"80903\","
+                                + "\"country_code\":\"us\"}"
+                                + "}"
+                );
 
-            return "{\"address\":{"
-                    + "\"house_number\":\"324\","
-                    + "\"road\":\"North Tejon Street\","
-                    + "\"city\":\"Colorado Springs\","
-                    + "\"state\":\"Colorado\","
-                    + "\"postcode\":\"80903\","
-                    + "\"country_code\":\"us\"}"
-                    + "}";
-        };
+//        Http http = (String url) -> {
+//            // 조건 추가
+//            if (!url.contains("lat=38.000000&lon=-104.000000"))
+//                fail("url " + url + " does not contain correct parms");
+//
+//            return "{\"address\":{"
+//                    + "\"house_number\":\"324\","
+//                    + "\"road\":\"North Tejon Street\","
+//                    + "\"city\":\"Colorado Springs\","
+//                    + "\"state\":\"Colorado\","
+//                    + "\"postcode\":\"80903\","
+//                    + "\"country_code\":\"us\"}"
+//                    + "}";
+//        };
 
         AddressRetriever retriever = new AddressRetriever(http);
 
