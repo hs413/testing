@@ -1,7 +1,5 @@
 package com.example.section1.tdd;
 
-import com.example.section1.basic.Criterion;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
